@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blur-background"></div>
+    <header>
+        <div class="logo">
+            <a href="#home"><img src="image/aquatic.jpg" alt="Logo">AQUATIC</a>       
+        </div>
+        <ul class="navigationvar">
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student2\homepage.html"target="_parent">Home</a></li>
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student4\gallery.html"target="_parent">Gallery</a></li>
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student3\user_profile.html"target="_parent">User Profile</a></li>
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student4\sitemap.html"target="_parent">Site Map</a></li>
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student2\feeedback.html" target="_parent" class="active">Feedback</a></li>
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student3\team.html"target="_parent">Team</a></li>
+            <li><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student1\ecom\ecomm.html"target="_parent">Shop</a></li>
+        </ul>
+        <div class="right-content">
+            <a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student2\Sign.html" class="sign-btn">Sign In</a>
+            <i class="ri-menu-line"></i>
+        </div>
+    </header>
+        <form class="feedback-form" onsubmit="return validateForm(event)">
+            <table>
+                <tr>
+                    <th colspan="2">Feedback Form</th>
+                </tr>
+                <tr>
+                    <td><label for="fname">First Name </label></td>
+                    <td><input type="text" id="fname" name="fname" placeholder="Enter your first name" oninput="checkInput(this)"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="fnameError">First name required</span></td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name </label></td>
+                    <td><input type="text" id="lname" name="lname" placeholder="Enter your last name" oninput="checkInput(this)"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="lnameError">Last name required</span></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email </label></td>
+                    <td><input type="email" id="email" name="email" placeholder="Enter your email address" oninput="checkInput(this)"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="emailError">Valid email required</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Was this your first time visiting?</label></td>
+                </tr>
+                <tr>
+                    <td>Yes <input type="radio" name="firstVisit" value="yes"></td>
+                    <td>No <input type="radio" name="firstVisit" value="no"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="visitError">Select yes or No?</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Was our website informative and understandable?</label></td>
+                </tr>
+                <tr>
+                    <td>Yes <input type="radio" name="informative" value="yes"></td>
+                    <td>No <input type="radio" name="informative" value="no"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="infoError">Select yes or No?</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>If 'NO', please tell us how we can improve:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea name="improvement" placeholder="Your feedback" oninput="checkInput(this)"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="improveError">If no, tell something</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Did you like our website? Rate us:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Would you like to receive updates?</label></td>
+                </tr>
+                <tr>
+                    <td>Yes <input type="radio" name="updates" value="yes"></td>
+                    <td>No <input type="radio" name="updates" value="no"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="error" id="updateError">Select yes or No?</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Do you have any questions? Please drop them here:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea name="questions" placeholder="Your questions" oninput="checkInput(this)"></textarea></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                    <td><button type="reset">Reset</button></td>
+                </tr>
+            </table>
+        </form>
+        <div class="thank">
+        <div id="thankYouMessage" class="hidden">
+            <h2>Thank you for filling out the form!</h2><br>
+            Here is the feedback you submitted:
+            <div id="feedbackData"></div>
+           <a href="feeedback.html" ><div class="button">OK</div></a>
+        </div>
+    </div>
+    <footer>
+        <div class="team">
+            <table>
+                <tr>
+                    <th colspan="2">About Us</th>
+                </tr>
+                <tr>
+                    <td><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student2\pageediter.html">Vijayabalan Kirushnabalan</a></td>
+                    <td><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student1\page_editor.html">Jiffry Fathima Fayaza</a></td>
+                </tr>
+                <tr>
+                    <td><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student4\risvini.html">Risvini Tharumarasa</a></td>
+                    <td><a href="C:\Users\kirus\OneDrive\Desktop\webcourseworkfinal\student3\page_editor_Ashra.html">Ashraff Fathima Ashra</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="socialicon">
+            <h2>Contact Us</h2>
+            <a href="#"><i class="ri-facebook-line"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+            <a href="#"><i class="ri-whatsapp-line"></i></a>
+            <a href="#"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+        <div class="conditions">
+			<table>
+				<tr>
+					<th colspan="2">Terms & Conditions</th>
+				</tr>
+				<tr>
+					<td><a href="https://www.globalgoals.org/privacy-policy/">Privacy Policy</a></td>
+					<td><a href="https://www.globalgoals.org/cookies/">Cookies</a></td>
+				</tr>
+				<tr>
+					<td><a href="https://www.globalgoals.org/anti-corruption/">Anti-corruption</a></td>
+					<td><a href="https://www.globalgoals.org/asset-licence/">Asset Licence</a></td>
+				</tr>
+			</table>
+        </div>
+    </footer>
+    <script src="feedback.js"></script>
+</body>
+</html>
